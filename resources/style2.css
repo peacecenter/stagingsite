@@ -1,0 +1,558 @@
+@charset "UTF-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+    font-family: Avenir-Book;
+    src: url('https://privateevents.peacecenter.org/articlemedia/fonts/Avenir-Book.ttf');
+}
+
+@font-face {
+    font-family: Gotham-Book;
+    src: url('https://privateevents.peacecenter.org/articlemedia/fonts/Gotham-Book.otf');
+}
+
+@font-face {
+    font-family: Gotham-Medium;
+    src: url('https://privateevents.peacecenter.org/articlemedia/fonts/Gotham-Medium.otf');
+}
+
+/* CSS Document */
+
+.maxcontainer h1 {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+	font-size: 48px;
+	color: #4c4c4c;
+	text-transform: uppercase;
+	margin: 0 0 25px;
+}
+
+.maxcontainer h2 {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+	font-size: 36px;
+	color: #4c4c4c;
+	text-transform: uppercase;
+	margin: 0 0 25px;
+	text-align: center;
+	width: 100%;
+}
+
+.maxcontainer h3 {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+	color: #4b768a;
+}
+
+.benefits h2,
+.saveseat h2 {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	color: #4c4c4c;
+	text-transform: uppercase;
+	margin: 0 0 25px;
+	text-align: center;
+}
+
+.maxcontainer p {
+	font-family: "Avenir", "Avenir-Book", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: #4c4c4c;
+	line-height: 1.6;
+}
+
+.pricinginfo p {
+	font-family: "Avenir", "Avenir-Book", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: #ffffff;
+	line-height: 1.6;
+}
+
+.heavy {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+}
+
+.hero,
+.intro,
+.ctaholder,
+.pricinginfo,
+.benefits,
+.saveseat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.herologo {
+	width: calc(100% - 60px);
+}
+
+.hero {
+	background-color: #4c4c4c;
+	/*background: linear-gradient(to top right, #b3aea7, #c7c1bd);*/
+	min-height: 20vh;
+	padding: 100px 0;
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+}
+
+.herovideo {
+	position: fixed;
+	z-index: 1;
+	width: 160vw;
+	height: 120vh; 
+	opacity: 0.7;
+}
+
+.maxcontainer {
+	max-width: 300px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	position: relative;
+}
+
+.grid {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 25px 0 0;
+}
+
+.showlogo {
+	width: calc((100% / 5) - 32px);
+	margin: 20px 10px 0;
+	background-color: #ffffff;
+	text-decoration: none;
+	color: #4c4c4c;
+	display: none;
+	flex-flow: column nowrap;
+	text-align: center;
+	overflow: hidden;
+	border: 2px solid #ffffff;
+}
+
+.showlogo img {
+	width: 100%;
+	opacity: 1;
+	transform: scale(1);
+	transition-duration: 0.5s; 
+}
+
+.showlogo:hover img {
+	opacity: 0.1;
+	transform: scale(1.1);
+	transition-duration: 0.5s; 
+}
+
+.showlogo span {
+	position: absolute;
+	margin-top: 100px;
+	width: 200px;
+	opacity: 0;
+	transition-duration: 0.5s;
+}
+
+.showlogo:hover span {
+	position: absolute;
+	margin-top: 45px;
+	max-width: 200px;
+	opacity: 1;
+	transition-duration: 0.5s;
+}
+
+.showlogo:hover span:after {
+	content: 'Learn More';
+	display: block;
+	margin-top: 25px;
+	font-size: 14px;
+	font-family: "Avenir", "Avenir-Book", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	color: #4b768a;
+}
+
+.intro,
+.benefits,
+.saveseat {
+	padding: 50px 0;
+	background-color: #ecedee;
+	z-index: 5;
+	position: relative;
+}
+
+.showpagevideo {
+	width: 100%;
+	min-height: 170px;
+	margin: 0 0 25px;
+}
+
+.ctaholder{
+	width: 100%;
+	margin: 30px 0;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.cta {
+	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
+	background-color: #4b768a;
+	padding: 25px;
+	color: #ffffff;
+	text-decoration: none;
+	width: calc(100% / 1);
+	text-align: center;
+	border-radius: 10px;
+	margin: 10px 0;
+}
+
+.cta:hover {
+	background-color: #76b758;
+}
+
+.pricinginfo {
+	padding: 50px 0;
+	background-color: #4c4c4c;
+}
+
+.split {
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 300px;
+	justify-content: center;
+}
+
+.split p {
+	margin-top: 25px;
+}
+
+.seatingmap,
+.packages {
+	width: 100%;
+	max-width: 300px;
+}
+
+.seatingmap {
+	display: none;
+}
+
+.map {
+	width: 100%;
+}
+
+.pricinggrid {
+	width: 100%;
+}
+
+.benhold {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: row wrap;
+}
+
+.benefits {
+  padding: 50px 0;
+  justify-content: flex-start;
+  align-items: stretch; 
+}
+
+.benefitright {
+  width: 100%;
+  max-width: 600px;
+  padding: 0px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.benefitleft {
+  width: 50%;
+  overflow: hidden;
+  display: none;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.benefitright h2 {
+  text-align: center;
+	max-width: 300px;
+}
+
+.benefit {
+  padding: 20px 0px;
+  padding-left: 0px;
+  font-family: "Avenir", "Avenir-Book", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.benefit p {
+  padding-right: 0px;
+}
+
+.benefit:last-of-type {
+  border: 0;
+  padding-bottom: 0px;
+}
+
+p.disclaimer {
+	font-size: 12px;
+	font-style: italic;
+}
+
+.seatcontent {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.leftimage {
+	margin: 0px 50px 0 0;
+	display: none;
+}
+
+.leftimage img {
+	border-radius: 20px;
+}
+
+.saveseat h2,
+.saveseat p {
+	color: #4c4c4c;
+}
+
+.saveseat {
+	background-color: #e0ddda;
+}
+
+.saveseat .ctaholder,
+.saveseat .card {
+	margin: 0;
+}
+
+.saveseat .card {
+	background: none;
+	text-align: center;
+}
+
+.saveseat .card p {
+	padding: 15px 0 0;
+}
+
+.sectiondiv {
+	display: block;
+	height: 1px;
+	background-color: #cccccc;
+	width: 100%;
+	margin: 50px 0;
+}
+
+@media screen and ( min-width:480px ) {
+	
+}
+
+@media screen and ( min-width:768px ) {
+	
+	.maxcontainer {
+		max-width: 700px;
+	}
+	
+	.showlogo {
+		display: flex;
+		width: calc((100% / 3) - 30px);
+	}
+	
+	.showpagevideo {
+		width: 100%;
+		min-height: 393px;
+	}
+	
+	.ctaholder{
+	  flex-direction: row;
+		flex-wrap: wrap
+  }
+
+	.cta {
+		width: 41%;
+	}
+	
+	.benefits {
+		justify-content: center;
+	}
+	
+	.card {
+		width: calc((100% / 2) - 15px);
+	}
+	
+	.saveseat .card {
+		width: calc((100% / 3) - 0px);
+	}
+	
+	.seatingmap,
+	.packages {
+		max-width: 700px;
+	}
+	
+	.split {
+		max-width: 700px;
+	}
+	
+}
+
+@media screen and ( min-width:1200px ) {
+	
+	.herovideo {
+		width: 100vw;
+		height: 120vh;
+	}
+	
+	
+	.maxcontainer {
+		max-width: 1200px;
+	}
+	
+	.showlogo {
+		display: flex;
+		width: calc((100% / 5) - 30px);
+	}
+	
+	.showpagevideo {
+		width: 75%;
+		min-height: 510px;
+	}
+	
+	.ctaholder{
+	  flex-direction: row;
+		flex-wrap: wrap
+  }
+
+	.cta {
+		width: calc(100% / 5.1);
+	}
+	
+	.card {
+		width: calc((100% / 3) - 15px);
+	}
+	
+	.saveseat .card {
+		width: calc((100% / 3) - 0px);
+	}
+	
+	.seatingmap {
+		display: flex;
+		align-items: center;
+	}
+	
+	.split {
+		justify-content: space-between;
+		max-width: 1200px;
+	}
+	
+	.seatingmap,
+	.packages {
+		width: 48%;
+		max-width: unset;
+	}
+	
+	.packages {
+		padding-left: 50px;
+		width: calc(48% - 20px);
+	}
+	
+	.benefit {
+		width: 48%;
+	}
+	
+	.benefit:last-of-type {
+		padding-bottom: 50px;
+	}
+	
+	.benefit p {
+		padding-right: 10px;
+	}
+	
+	.benefitleft {
+		display: flex;
+		background-size: cover;
+		background-position: center;
+	}
+	
+	.benefitright {
+		width: 50%;
+		max-width: 600px;
+	}
+	
+	.benefits {
+		padding: 0;
+		justify-content: flex-start;
+	}
+	
+	.benefitright h2 {
+		text-align: left;
+		display: flex;
+		padding: 50px 0 0 50px;
+		width: 550px;
+	}
+	
+	.leftimage {
+		display: block;
+	}
+	
+	.seatcontent {
+		flex-direction: row;
+	}
+	
+	.pricinginfo h2,
+	.saveseat h2 {
+		text-align: left;
+	}
+	
+	.saveseat .card {
+		text-align: left;
+	}
+	
+}
