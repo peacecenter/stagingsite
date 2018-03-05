@@ -66,6 +66,10 @@ table {
 
 /* CSS Document */
 
+body,html {
+	overflow-x: hidden;
+}
+
 .maxcontainer h1 {
 	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
 	font-size: 48px;
@@ -134,9 +138,9 @@ table {
 
 .hero {
 	background-color: #4c4c4c;
-	/*background: linear-gradient(to top right, #b3aea7, #c7c1bd);*/
+	background: linear-gradient(to top right, #b3aea7, #c7c1bd);
 	min-height: 20vh;
-	padding: 100px 0;
+	padding: 100px 0 150px;
 	font-family: "Gotham-Medium", "Gotham-Book", "Gotham", Helvetica, Arial, sans-serif;
 }
 
@@ -254,6 +258,30 @@ table {
 
 .cta:hover {
 	background-color: #76b758;
+}
+
+.hambox {
+	background-image: url('https://tickets.peacecenter.org/ArticleMedia/Images/H-Full-BG-3.jpg');
+	background-size: cover;
+	width: 100%;
+	margin: 30px 0 0;
+	padding: 30px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	border-radius: 15px;
+}
+
+.hambox img {
+	width: 100%;
+	height: 100%;
+}
+
+.hambox .cta {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .pricinginfo {
@@ -391,6 +419,19 @@ p.disclaimer {
 	margin: 50px 0;
 }
 
+.intro:before {
+	content: '';
+	background: #ecedee;
+	display: block;
+	position: absolute;
+	height: 400px;
+	width: 150%;
+	top: 0;
+	z-index: 4;
+	margin-top: -50px;
+	transform: rotate(2deg);
+}
+
 @media screen and ( min-width:480px ) {
 	
 }
@@ -472,6 +513,14 @@ p.disclaimer {
 
 	.cta {
 		width: calc(100% / 5.1);
+	}
+	
+	.hambox img {
+		width: 50%;
+	}
+
+	.hambox .cta {
+		width: 40%;
 	}
 	
 	.card {
