@@ -145,7 +145,7 @@ body,html {
 }
 
 .herovideo {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	width: 160vw;
 	height: 120vh; 
@@ -487,6 +487,7 @@ p.disclaimer {
 @media screen and ( min-width:1200px ) {
 	
 	.herovideo {
+		position: fixed;
 		width: 100vw;
 		height: 120vh;
 	}
